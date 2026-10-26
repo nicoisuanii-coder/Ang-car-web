@@ -164,6 +164,8 @@ fieldset { border: 0; margin: 0; padding: 0; display: flex; flex-direction: colu
 .check input { margin-top: 4px; accent-color: var(--accent); }
 .form-foot { grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
 .status { font-size: .9rem; font-weight: 500; }
+.dark .rules { color: var(--night-ink); opacity: .8; }
+.dark .form { box-shadow: none; color: var(--ink); }
 .status.ok { color: var(--ok); } .status.err { color: var(--warn); }
 
 /* Cómo funciona */
@@ -467,74 +469,7 @@ td:first-child { font-weight: 500; }
   </div>
 </section>
 
-<section class="band" id="opinar">
-  <div class="in form-wrap">
-    <div class="form-side">
-      <span class="eyebrow">Tu turno</span>
-      <h2>Cuéntanos qué te pareció</h2>
-      <p class="lead">Nos sirve más una crítica concreta que un "está bueno". Lo que escribas se publica al tiro en esta página.</p>
-      <ul class="rules">
-        <li><svg aria-hidden="true"><use href="#i-check"/></svg>No editamos ni corregimos lo que escribes.</li>
-        <li><svg aria-hidden="true"><use href="#i-check"/></svg>Solo quitamos opiniones con insultos o datos personales.</li>
-        <li><svg aria-hidden="true"><use href="#i-check"/></svg>Puedes firmar con tu nombre o solo con iniciales.</li>
-      </ul>
-    </div>
-    <form class="form" id="form" novalidate>
-      <div class="field">
-        <label for="f-nombre">Nombre</label>
-        <input type="text" id="f-nombre" maxlength="40" autocomplete="off" placeholder="Ej.: Camila R.">
-      </div>
-      <div class="field">
-        <label for="f-origen">¿De dónde vienes?</label>
-        <input type="text" id="f-origen" maxlength="50" autocomplete="off" placeholder="Carrera, colegio, taller o ciudad">
-      </div>
-      <div class="field">
-        <label for="f-perfil">Tú eres…</label>
-        <select class="in-f" id="f-perfil">
-          <option value="Conductor">Conductor</option>
-          <option value="Mecánico">Mecánico o técnico</option>
-          <option value="Estudiante">Estudiante</option>
-          <option value="Docente">Docente</option>
-          <option value="Visitante">Otro visitante</option>
-        </select>
-      </div>
-      <div class="field">
-        <label for="f-probo">¿Qué probaste?</label>
-        <select class="in-f" id="f-probo">
-          <option value="Demo guiada">Demo guiada</option>
-          <option value="Demo completa">Demo completa</option>
-          <option value="Modelo 2">Modelo 2 (solo lectura)</option>
-          <option value="Asistente IA">Asistente IA</option>
-          <option value="Antes de salir">Antes de salir</option>
-          <option value="Borrado de códigos">Borrado de códigos</option>
-        </select>
-      </div>
-      <fieldset class="field full">
-        <legend>Nota</legend>
-        <div class="rate" id="rate">
-          <input type="radio" name="nota" id="n1" value="1"><label for="n1" title="1 de 5">★</label>
-          <input type="radio" name="nota" id="n2" value="2"><label for="n2" title="2 de 5">★</label>
-          <input type="radio" name="nota" id="n3" value="3"><label for="n3" title="3 de 5">★</label>
-          <input type="radio" name="nota" id="n4" value="4"><label for="n4" title="4 de 5">★</label>
-          <input type="radio" name="nota" id="n5" value="5"><label for="n5" title="5 de 5">★</label>
-        </div>
-        <span class="rate-txt" id="rate-txt">Toca una estrella</span>
-      </fieldset>
-      <div class="field full">
-        <label for="f-texto">Tu opinión</label>
-        <textarea id="f-texto" maxlength="600" placeholder="¿Qué te gustó? ¿Qué cambiarías? ¿Lo usarías en tu auto?"></textarea>
-        <span class="count" id="count">0 / 600</span>
-      </div>
-      <label class="check full field" for="f-ok" style="grid-column:1/-1;flex-direction:row"><input type="checkbox" id="f-ok"> Acepto que mi opinión se publique en esta página con el nombre que puse.</label>
-      <div class="form-foot">
-        <span class="status" id="status" role="status"></span>
-        <button class="btn primary" type="submit" id="enviar">Publicar opinión</button>
-      </div>
-    </form>
-  </div>
-</section>
-
-<section class="band alt" id="app">
+<section class="band" id="app">
   <div class="in">
     <div class="head">
       <span class="eyebrow">La app</span>
@@ -555,7 +490,7 @@ td:first-child { font-weight: 500; }
   </div>
 </section>
 
-<section class="band" id="dongle">
+<section class="band alt" id="dongle">
   <div class="in">
     <div class="dongle-wrap">
       <div class="head">
@@ -582,7 +517,7 @@ td:first-child { font-weight: 500; }
   </div>
 </section>
 
-<section class="band alt" id="specs">
+<section class="band" id="specs">
   <div class="in">
     <div class="head">
       <span class="eyebrow">Especificaciones</span>
@@ -653,6 +588,74 @@ td:first-child { font-weight: 500; }
     </div>
   </div>
 </section>
+
+<section class="band dark" id="opinar">
+  <div class="in form-wrap">
+    <div class="form-side">
+      <span class="eyebrow">Tu turno</span>
+      <h2>Cuéntanos qué te pareció</h2>
+      <p class="lead">Nos sirve más una crítica concreta que un "está bueno". Lo que escribas se publica al tiro en esta página.</p>
+      <ul class="rules">
+        <li><svg aria-hidden="true"><use href="#i-check"/></svg>No editamos ni corregimos lo que escribes.</li>
+        <li><svg aria-hidden="true"><use href="#i-check"/></svg>Solo quitamos opiniones con insultos o datos personales.</li>
+        <li><svg aria-hidden="true"><use href="#i-check"/></svg>Puedes firmar con tu nombre o solo con iniciales.</li>
+      </ul>
+    </div>
+    <form class="form" id="form" novalidate>
+      <div class="field">
+        <label for="f-nombre">Nombre</label>
+        <input type="text" id="f-nombre" maxlength="40" autocomplete="off" placeholder="Ej.: Camila R.">
+      </div>
+      <div class="field">
+        <label for="f-origen">¿De dónde vienes?</label>
+        <input type="text" id="f-origen" maxlength="50" autocomplete="off" placeholder="Carrera, colegio, taller o ciudad">
+      </div>
+      <div class="field">
+        <label for="f-perfil">Tú eres…</label>
+        <select class="in-f" id="f-perfil">
+          <option value="Conductor">Conductor</option>
+          <option value="Mecánico">Mecánico o técnico</option>
+          <option value="Estudiante">Estudiante</option>
+          <option value="Docente">Docente</option>
+          <option value="Visitante">Otro visitante</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="f-probo">¿Qué probaste?</label>
+        <select class="in-f" id="f-probo">
+          <option value="Demo guiada">Demo guiada</option>
+          <option value="Demo completa">Demo completa</option>
+          <option value="Modelo 2">Modelo 2 (solo lectura)</option>
+          <option value="Asistente IA">Asistente IA</option>
+          <option value="Antes de salir">Antes de salir</option>
+          <option value="Borrado de códigos">Borrado de códigos</option>
+        </select>
+      </div>
+      <fieldset class="field full">
+        <legend>Nota</legend>
+        <div class="rate" id="rate">
+          <input type="radio" name="nota" id="n1" value="1"><label for="n1" title="1 de 5">★</label>
+          <input type="radio" name="nota" id="n2" value="2"><label for="n2" title="2 de 5">★</label>
+          <input type="radio" name="nota" id="n3" value="3"><label for="n3" title="3 de 5">★</label>
+          <input type="radio" name="nota" id="n4" value="4"><label for="n4" title="4 de 5">★</label>
+          <input type="radio" name="nota" id="n5" value="5"><label for="n5" title="5 de 5">★</label>
+        </div>
+        <span class="rate-txt" id="rate-txt">Toca una estrella</span>
+      </fieldset>
+      <div class="field full">
+        <label for="f-texto">Tu opinión</label>
+        <textarea id="f-texto" maxlength="600" placeholder="¿Qué te gustó? ¿Qué cambiarías? ¿Lo usarías en tu auto?"></textarea>
+        <span class="count" id="count">0 / 600</span>
+      </div>
+      <label class="check full field" for="f-ok" style="grid-column:1/-1;flex-direction:row"><input type="checkbox" id="f-ok"> Acepto que mi opinión se publique en esta página con el nombre que puse.</label>
+      <div class="form-foot">
+        <span class="status" id="status" role="status"></span>
+        <button class="btn primary" type="submit" id="enviar">Publicar opinión</button>
+      </div>
+    </form>
+  </div>
+</section>
+
 
 <section class="band">
   <div class="in">
