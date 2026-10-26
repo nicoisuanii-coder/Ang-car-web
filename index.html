@@ -678,7 +678,7 @@ input.bad { border-color: var(--warn) !important; }
       <button type="button" class="plan" role="radio" aria-checked="true" data-plan="pack">
         <span class="badge">Recomendado</span>
         <div class="top-row"><h3>Pack completo</h3><span class="radio" aria-hidden="true"></span></div>
-        <p>Escáner + primer año de Membresía incluido.</p>
+        <p>Escáner + primer año de Membresía incluido. <span id="pack-ahorro"></span></p>
         <span class="price-big" data-price="pack">–</span>
       </button>
       <button type="button" class="plan" role="radio" aria-checked="false" data-plan="solo">
@@ -1085,20 +1085,21 @@ input.bad { border-color: var(--warn) !important; }
   }
 
   // Tienda (precios de ejemplo; todo en memoria, sin pagos reales)
-  const PRECIO = { escaner: 49990, membresia: 19990, envio: 4990 };
+  const PRECIO = { escaner: 69990, membresia: 59900, pack: 119990, envio: 4990 };
   const clp = (n) => '$' + Math.round(n).toLocaleString('es-CL');
   const tienda = { plan: 'pack', cant: 1 };
   $('p-hw').textContent = clp(PRECIO.escaner);
   $('p-sub').replaceChildren(document.createTextNode(clp(PRECIO.membresia) + ' '), Object.assign(document.createElement('small'), { textContent: 'al año' }));
-  document.querySelector('[data-price="pack"]').textContent = clp(PRECIO.escaner);
+  document.querySelector('[data-price="pack"]').textContent = clp(PRECIO.pack);
+  $('pack-ahorro').textContent = 'Ahorras ' + clp(PRECIO.escaner + PRECIO.membresia - PRECIO.pack) + ' frente a comprarlos por separado.';
   document.querySelector('[data-price="solo"]').replaceChildren(document.createTextNode(clp(PRECIO.escaner) + ' '), Object.assign(document.createElement('small'), { textContent: '+ ' + clp(PRECIO.membresia) + ' al año' }));
   document.querySelector('[data-price="renov"]').replaceChildren(document.createTextNode(clp(PRECIO.membresia) + ' '), Object.assign(document.createElement('small'), { textContent: 'al año' }));
 
   function lineas() {
     const n = tienda.cant, L = [];
     if (tienda.plan === 'pack') {
-      L.push(['Escáner ANG Car × ' + n, PRECIO.escaner * n]);
-      L.push(['Membresía primer año × ' + n, 0, 'Incluida']);
+      L.push(['Pack completo × ' + n, PRECIO.pack * n]);
+      L.push(['Incluye escáner + primer año de Membresía', 0, 'Incluido']);
       L.push(['Envío', PRECIO.envio]);
     } else if (tienda.plan === 'solo') {
       L.push(['Escáner ANG Car × ' + n, PRECIO.escaner * n]);
@@ -1113,7 +1114,7 @@ input.bad { border-color: var(--warn) !important; }
   function textoRenov() {
     const n = tienda.plan === 'renov' ? 1 : tienda.cant;
     const base = 'La Membresía se renueva cada año por ' + clp(PRECIO.membresia * n) + '. Puedes cancelarla cuando quieras antes de la fecha de renovación.';
-    return tienda.plan === 'pack' ? 'Hoy pagas el escáner y el envío; el primer año va incluido. ' + base : base;
+    return tienda.plan === 'pack' ? 'Hoy pagas el pack y el envío; el primer año de Membresía va incluido. Desde el segundo año, l' + base.slice(1) : base;
   }
   function pintarResumen(ul) {
     ul.replaceChildren();
