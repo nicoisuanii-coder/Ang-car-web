@@ -354,6 +354,60 @@ input[type=text], select.in-f, textarea { background: var(--field); border-color
 .demo-ring { width: 54px; height: 54px; }
 .demo-ring b { font-size: .8rem; }
 @media (prefers-reduced-motion: reduce) { .ring .val { transition: none; } .btn:hover, .op:hover, .steps > li:hover, .limits li:hover { transform: none; } }
+
+/* Tienda */
+.shop-note { display: inline-flex; gap: 8px; align-items: center; font-size: .85rem; font-weight: 500; color: var(--muted); background: var(--glass); border: 1px solid var(--glass-edge); border-radius: 999px; padding: 6px 14px; align-self: flex-start; }
+.shop-note b { color: var(--accent); }
+.model { display: grid; grid-template-columns: 1fr auto 1fr; gap: 16px; align-items: stretch; }
+.model > * { min-width: 0; }
+.model .card { background: var(--glass); border: 1px solid var(--glass-edge); box-shadow: var(--shadow); -webkit-backdrop-filter: var(--blur); backdrop-filter: var(--blur); border-radius: var(--r-lg); padding: 22px; display: flex; flex-direction: column; gap: 8px; }
+.model .card ul { margin: 4px 0 0; padding-left: 18px; color: var(--muted); font-size: .93rem; display: flex; flex-direction: column; gap: 4px; }
+.model .plus { align-self: center; font: 700 1.6rem var(--display); color: var(--accent); }
+.kind { font-size: .72rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); }
+.price-big { font: 700 1.7rem var(--display); font-variant-numeric: tabular-nums; }
+.price-big small { font: 500 .85rem var(--body); color: var(--muted); }
+.plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.plan { position: relative; min-width: 0; text-align: left; font: inherit; color: var(--ink); cursor: pointer; background: var(--glass); border: 1.5px solid var(--glass-edge); box-shadow: var(--shadow); -webkit-backdrop-filter: var(--blur); backdrop-filter: var(--blur); border-radius: var(--r-lg); padding: 22px; display: flex; flex-direction: column; gap: 10px; transition: transform .2s ease, border-color .2s ease; }
+.plan:hover { transform: translateY(-4px); }
+.plan[aria-checked="true"] { border-color: var(--ink); box-shadow: 0 0 0 3px rgba(28,25,23,.12), var(--shadow); }
+.plan .badge { position: absolute; top: -12px; left: 20px; background: var(--accent-vivid); color: #fff; font-size: .74rem; font-weight: 600; padding: 4px 10px; border-radius: 999px; }
+.plan h3 { font-size: 1.05rem; }
+.plan p { color: var(--muted); font-size: .9rem; }
+.plan .radio { width: 20px; height: 20px; border-radius: 50%; border: 2px solid var(--line); display: grid; place-items: center; flex: none; }
+.plan[aria-checked="true"] .radio { border-color: var(--ink); }
+.plan[aria-checked="true"] .radio::after { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--ink); }
+.plan .top-row { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; }
+.checkout { display: grid; grid-template-columns: 1.15fr .85fr; gap: 24px; align-items: start; }
+.checkout > * { min-width: 0; }
+.panel { background: var(--glass); border: 1px solid var(--glass-edge); box-shadow: var(--shadow); -webkit-backdrop-filter: var(--blur); backdrop-filter: var(--blur); border-radius: var(--r-lg); padding: 24px; display: flex; flex-direction: column; gap: 16px; }
+.order-form { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.order-form > * { min-width: 0; }
+.order-form .full { grid-column: 1 / -1; }
+.err { color: var(--warn); font-size: .8rem; min-height: 1.1em; }
+input.bad { border-color: var(--warn) !important; }
+.qty { display: inline-flex; align-items: center; border: 1px solid var(--glass-edge); border-radius: 999px; background: var(--field); overflow: hidden; }
+.qty button { font: 600 1.1rem var(--body); width: 40px; height: 38px; border: 0; background: transparent; color: var(--ink); cursor: pointer; }
+.qty button:disabled { opacity: .35; cursor: default; }
+.qty output { min-width: 34px; text-align: center; font-weight: 600; font-variant-numeric: tabular-nums; }
+.qty-row { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+.qty-row[hidden] { display: none; }
+.summary-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+.summary-list li { display: flex; justify-content: space-between; gap: 12px; padding-block: 9px; border-bottom: 1px solid var(--line); font-size: .95rem; }
+.summary-list li span:last-child { font-variant-numeric: tabular-nums; font-weight: 500; white-space: nowrap; }
+.summary-list li.total { border-bottom: 0; font: 700 1.15rem var(--display); padding-top: 12px; }
+.renew { font-size: .85rem; color: var(--muted); background: var(--accent-soft); border-radius: 12px; padding: 10px 12px; }
+.sim { font-size: .8rem; color: var(--muted); }
+.modal { position: fixed; inset: 0; z-index: 50; background: rgba(20,17,16,.45); display: grid; place-items: center; padding: max(16px, env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-right, 0px)) max(16px, env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px)); }
+.modal-card { background: #FBF7F2; border-radius: var(--r-lg); padding: 26px; max-width: 460px; width: 100%; display: flex; flex-direction: column; gap: 12px; box-shadow: 0 40px 80px -30px rgba(0,0,0,.5); max-height: 100%; overflow: auto; }
+.modal-card .ok-ico { width: 46px; height: 46px; border-radius: 50%; background: color-mix(in srgb, var(--ok) 14%, transparent); color: var(--ok); display: grid; place-items: center; }
+.modal-card .ok-ico svg { width: 24px; height: 24px; }
+.order-no { font: 600 1rem var(--mono); }
+@media (max-width: 900px) {
+  .plans, .checkout { grid-template-columns: 1fr; }
+  .model { grid-template-columns: 1fr; }
+  .model .plus { justify-self: center; }
+}
+@media (max-width: 560px) { .order-form { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -384,6 +438,7 @@ input[type=text], select.in-f, textarea { background: var(--field); border-color
       <a class="opt" href="#opiniones">Opiniones</a>
       <a class="opt" href="#app">La app</a>
       <a class="opt" href="#dongle">El dongle</a>
+      <a class="opt" href="#tienda">Tienda</a>
       <a class="opt" href="#preguntas">Preguntas</a>
       <a class="btn primary" href="#opinar">Dejar opinión</a>
     </nav>
@@ -584,6 +639,100 @@ input[type=text], select.in-f, textarea { background: var(--field); border-color
   </div>
 </section>
 
+<section class="band" id="tienda">
+  <div class="in">
+    <div class="head">
+      <span class="eyebrow">Tienda</span>
+      <h2>Escáner ANG Car y Membresía Anual</h2>
+      <p class="lead">El escáner se paga una vez. La app necesita la Membresía Anual para el diagnóstico completo. Elige cómo quieres llevarlo.</p>
+      <span class="shop-note"><b>Precios de ejemplo.</b> ANG Car todavía no está a la venta: este carrito es una simulación y no cobra nada.</span>
+    </div>
+
+    <div class="model">
+      <div class="card">
+        <span class="kind">Paso A · Pago único</span>
+        <h3>Escáner OBD-II ANG Car (Modelo 1)</h3>
+        <span class="price-big" id="p-hw">–</span>
+        <ul>
+          <li>ESP32 con Bluetooth LE y transceptor CAN SN65HVD230</li>
+          <li>Autos OBD-II con red CAN (ISO 15765-4), la mayoría desde 2008, e híbridos</li>
+          <li>Carcasa con conector OBD-II integrado</li>
+          <li>Funciona con Android (APK), Chrome y Bluefy en iPhone</li>
+        </ul>
+      </div>
+      <span class="plus" aria-hidden="true">+</span>
+      <div class="card">
+        <span class="kind">Paso B · Membresía Anual</span>
+        <h3>App ANG Car con todo desbloqueado</h3>
+        <span class="price-big" id="p-sub">–</span>
+        <ul>
+          <li>Lectura y borrado guiado de códigos de falla</li>
+          <li>Datos en vivo y avisos en marcha</li>
+          <li>Asistente IA y diagnóstico avanzado por sistema</li>
+          <li>Actualizaciones de la base de códigos</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="plans" role="radiogroup" aria-label="Opciones de compra" id="plans">
+      <button type="button" class="plan" role="radio" aria-checked="true" data-plan="pack">
+        <span class="badge">Recomendado</span>
+        <div class="top-row"><h3>Pack completo</h3><span class="radio" aria-hidden="true"></span></div>
+        <p>Escáner + primer año de Membresía incluido.</p>
+        <span class="price-big" data-price="pack">–</span>
+      </button>
+      <button type="button" class="plan" role="radio" aria-checked="false" data-plan="solo">
+        <div class="top-row"><h3>Escáner + suscripción anual</h3><span class="radio" aria-hidden="true"></span></div>
+        <p>Pagas el escáner hoy y la Membresía se cobra cada año.</p>
+        <span class="price-big" data-price="solo">–</span>
+      </button>
+      <button type="button" class="plan" role="radio" aria-checked="false" data-plan="renov">
+        <div class="top-row"><h3>Renovar Membresía</h3><span class="radio" aria-hidden="true"></span></div>
+        <p>Para quienes ya tienen el escáner.</p>
+        <span class="price-big" data-price="renov">–</span>
+      </button>
+    </div>
+
+    <div class="checkout">
+      <form class="panel" id="order" novalidate>
+        <h3>Tus datos</h3>
+        <div class="order-form">
+          <div class="field full"><label for="o-nombre">Nombre completo</label><input type="text" id="o-nombre" autocomplete="name" maxlength="80"><span class="err" id="e-nombre"></span></div>
+          <div class="field"><label for="o-correo">Correo (activa la Membresía)</label><input type="text" id="o-correo" inputmode="email" autocomplete="email" maxlength="100"><span class="err" id="e-correo"></span></div>
+          <div class="field"><label for="o-fono">Teléfono</label><input type="text" id="o-fono" inputmode="tel" autocomplete="tel" maxlength="20" placeholder="+56 9 1234 5678"><span class="err" id="e-fono"></span></div>
+          <div class="field full" id="f-dir"><label for="o-dir">Dirección de envío del escáner</label><input type="text" id="o-dir" autocomplete="street-address" maxlength="140" placeholder="Calle, número, comuna y ciudad"><span class="err" id="e-dir"></span></div>
+        </div>
+        <label class="check" for="o-terms"><input type="checkbox" id="o-terms"> <span id="terms-txt">Acepto los términos de la Membresía Anual.</span></label>
+        <span class="err" id="e-terms"></span>
+        <button class="btn primary" type="submit" id="o-btn" disabled>Completar compra y activar Membresía</button>
+        <span class="sim">Simulación: no se cobra ni se guarda ningún dato.</span>
+      </form>
+      <aside class="panel" aria-live="polite">
+        <h3>Resumen</h3>
+        <div class="qty-row" id="qty-row">
+          <span>Escáneres</span>
+          <div class="qty"><button type="button" id="q-menos" aria-label="Quitar uno">−</button><output id="q-n">1</output><button type="button" id="q-mas" aria-label="Agregar uno">+</button></div>
+        </div>
+        <ul class="summary-list" id="sum"></ul>
+        <p class="renew" id="renew"></p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<div class="modal" id="modal" hidden role="dialog" aria-modal="true" aria-labelledby="m-title">
+  <div class="modal-card">
+    <span class="ok-ico"><svg aria-hidden="true"><use href="#i-check"/></svg></span>
+    <h3 id="m-title">Pedido de ejemplo registrado</h3>
+    <span class="order-no" id="m-no"></span>
+    <ul class="summary-list" id="m-sum"></ul>
+    <p id="m-envio"></p>
+    <p id="m-memb"></p>
+    <p class="sim">Esto es una simulación de la feria: no se cobró nada y tus datos no se enviaron a ningún lado.</p>
+    <button type="button" class="btn primary" id="m-close">Cerrar</button>
+  </div>
+</div>
+
 <section class="band dark" id="seguridad">
   <div class="in">
     <div class="head">
@@ -630,7 +779,7 @@ input[type=text], select.in-f, textarea { background: var(--field); border-color
       <details><summary>¿Borrar el código arregla la falla?</summary><p>No. Borrar solo apaga la luz. Por eso la app primero revisa las condiciones, borra, vuelve a leer y te muestra si el código regresó. Si regresa, la falla sigue ahí.</p></details>
       <details><summary>¿Necesito internet?</summary><p>No para leer el auto. El dongle habla con el teléfono por Bluetooth. El asistente IA usa internet, y si no hay conexión responde con la base de códigos guardada en la app.</p></details>
       <details><summary>¿En qué se diferencia del Modelo 2?</summary><p>El Modelo 1 es para el taller: lee, borra y codifica. El Modelo 2 se conecta entre el auto y otro escáner y solo observa lo que pasa en la red, sin enviar nada.</p></details>
-      <details><summary>¿Cuándo se puede comprar?</summary><p>Todavía no está a la venta. Es un proyecto de especialidad y estamos buscando apoyo para fabricar una primera serie.</p></details>
+      <details><summary>¿Cuándo se puede comprar?</summary><p>Todavía no está a la venta. Es un proyecto de especialidad y estamos buscando apoyo para fabricar una primera serie. La tienda de esta página muestra cómo sería la compra, con precios de ejemplo.</p></details>
     </div>
   </div>
 </section>
@@ -934,6 +1083,122 @@ input[type=text], select.in-f, textarea { background: var(--field); border-color
     }
     $('more').hidden = items.length <= mostrar;
   }
+
+  // Tienda (precios de ejemplo; todo en memoria, sin pagos reales)
+  const PRECIO = { escaner: 49990, membresia: 19990, envio: 4990 };
+  const clp = (n) => '$' + Math.round(n).toLocaleString('es-CL');
+  const tienda = { plan: 'pack', cant: 1 };
+  $('p-hw').textContent = clp(PRECIO.escaner);
+  $('p-sub').replaceChildren(document.createTextNode(clp(PRECIO.membresia) + ' '), Object.assign(document.createElement('small'), { textContent: 'al año' }));
+  document.querySelector('[data-price="pack"]').textContent = clp(PRECIO.escaner);
+  document.querySelector('[data-price="solo"]').replaceChildren(document.createTextNode(clp(PRECIO.escaner) + ' '), Object.assign(document.createElement('small'), { textContent: '+ ' + clp(PRECIO.membresia) + ' al año' }));
+  document.querySelector('[data-price="renov"]').replaceChildren(document.createTextNode(clp(PRECIO.membresia) + ' '), Object.assign(document.createElement('small'), { textContent: 'al año' }));
+
+  function lineas() {
+    const n = tienda.cant, L = [];
+    if (tienda.plan === 'pack') {
+      L.push(['Escáner ANG Car × ' + n, PRECIO.escaner * n]);
+      L.push(['Membresía primer año × ' + n, 0, 'Incluida']);
+      L.push(['Envío', PRECIO.envio]);
+    } else if (tienda.plan === 'solo') {
+      L.push(['Escáner ANG Car × ' + n, PRECIO.escaner * n]);
+      L.push(['Membresía Anual × ' + n, PRECIO.membresia * n]);
+      L.push(['Envío', PRECIO.envio]);
+    } else {
+      L.push(['Renovación Membresía Anual', PRECIO.membresia]);
+    }
+    return L;
+  }
+  const totalHoy = () => lineas().reduce((t, l) => t + l[1], 0);
+  function textoRenov() {
+    const n = tienda.plan === 'renov' ? 1 : tienda.cant;
+    const base = 'La Membresía se renueva cada año por ' + clp(PRECIO.membresia * n) + '. Puedes cancelarla cuando quieras antes de la fecha de renovación.';
+    return tienda.plan === 'pack' ? 'Hoy pagas el escáner y el envío; el primer año va incluido. ' + base : base;
+  }
+  function pintarResumen(ul) {
+    ul.replaceChildren();
+    for (const [txt, monto, etiqueta] of lineas()) {
+      const li = document.createElement('li');
+      li.append(Object.assign(document.createElement('span'), { textContent: txt }), Object.assign(document.createElement('span'), { textContent: etiqueta || clp(monto) }));
+      ul.append(li);
+    }
+    const tot = document.createElement('li'); tot.className = 'total';
+    tot.append(Object.assign(document.createElement('span'), { textContent: 'Total a pagar hoy' }), Object.assign(document.createElement('span'), { textContent: clp(totalHoy()) }));
+    ul.append(tot);
+  }
+  const planes = [...document.querySelectorAll('#plans .plan')];
+  function actualizarTienda() {
+    planes.forEach((b) => b.setAttribute('aria-checked', String(b.dataset.plan === tienda.plan)));
+    const conEscaner = tienda.plan !== 'renov';
+    $('qty-row').hidden = !conEscaner;
+    $('f-dir').hidden = !conEscaner;
+    $('q-n').textContent = tienda.cant;
+    $('q-menos').disabled = tienda.cant <= 1; $('q-mas').disabled = tienda.cant >= 5;
+    pintarResumen($('sum'));
+    $('renew').textContent = textoRenov();
+    $('terms-txt').textContent = 'Acepto los términos de la Membresía Anual y su renovación automática por ' + clp(PRECIO.membresia * (conEscaner ? tienda.cant : 1)) + ' al año.';
+    validar(false);
+  }
+  planes.forEach((b, i) => {
+    b.addEventListener('click', () => { tienda.plan = b.dataset.plan; actualizarTienda(); });
+    b.addEventListener('keydown', (e) => {
+      if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft' && e.key !== 'ArrowDown' && e.key !== 'ArrowUp') return;
+      e.preventDefault();
+      const sig = planes[(i + (e.key === 'ArrowRight' || e.key === 'ArrowDown' ? 1 : planes.length - 1)) % planes.length];
+      sig.focus(); sig.click();
+    });
+  });
+  $('q-menos').addEventListener('click', () => { tienda.cant = Math.max(1, tienda.cant - 1); actualizarTienda(); });
+  $('q-mas').addEventListener('click', () => { tienda.cant = Math.min(5, tienda.cant + 1); actualizarTienda(); });
+
+  const tocado = {};
+  const CAMPOS = [
+    ['o-nombre', 'e-nombre', (v) => v.trim().length >= 3 ? '' : 'Escribe tu nombre y apellido.'],
+    ['o-correo', 'e-correo', (v) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim()) ? '' : 'Revisa el correo: debe ser como nombre@dominio.cl.'],
+    ['o-fono', 'e-fono', (v) => v.replace(/\D/g, '').length >= 8 ? '' : 'Escribe un teléfono de al menos 8 dígitos.'],
+    ['o-dir', 'e-dir', (v) => tienda.plan === 'renov' || v.trim().length >= 8 ? '' : 'Escribe la dirección completa con comuna.'],
+  ];
+  function validar(mostrarTodo) {
+    let ok = true;
+    for (const [id, eid, regla] of CAMPOS) {
+      const el = $(id), msg = regla(el.value);
+      if (msg) ok = false;
+      const ver = (mostrarTodo || tocado[id]) && msg;
+      $(eid).textContent = ver ? msg : '';
+      el.classList.toggle('bad', !!ver);
+      el.setAttribute('aria-invalid', ver ? 'true' : 'false');
+    }
+    const terms = $('o-terms').checked;
+    if (!terms) ok = false;
+    $('e-terms').textContent = mostrarTodo && !terms ? 'Marca la casilla para aceptar la renovación anual.' : '';
+    $('o-btn').disabled = !ok;
+    return ok;
+  }
+  CAMPOS.forEach(([id]) => {
+    $(id).addEventListener('input', () => validar(false));
+    $(id).addEventListener('blur', () => { tocado[id] = true; validar(false); });
+  });
+  $('o-terms').addEventListener('change', () => validar(false));
+
+  $('order').addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (!validar(true)) return;
+    const no = 'ANG-' + new Date().getFullYear() + '-' + String(Math.floor(100000 + Math.random() * 900000));
+    $('m-no').textContent = 'Pedido ' + no;
+    pintarResumen($('m-sum'));
+    const correo = $('o-correo').value.trim();
+    $('m-envio').textContent = tienda.plan === 'renov'
+      ? 'Sin envío: es solo la renovación de la Membresía.'
+      : 'Envío de ' + tienda.cant + (tienda.cant === 1 ? ' escáner' : ' escáneres') + ' a: ' + $('o-dir').value.trim() + '.';
+    $('m-memb').textContent = 'Membresía Anual: quedaría activa para ' + correo + ' al confirmarse el pago.';
+    $('modal').hidden = false;
+    $('m-close').focus();
+  });
+  const cerrarModal = () => { $('modal').hidden = true; $('o-btn').focus(); };
+  $('m-close').addEventListener('click', cerrarModal);
+  $('modal').addEventListener('click', (e) => { if (e.target === $('modal')) cerrarModal(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !$('modal').hidden) cerrarModal(); });
+  actualizarTienda();
   $('sort').addEventListener('change', muro);
   $('more').addEventListener('click', () => { mostrar += 8; muro(); });
   resumen(); muro();
