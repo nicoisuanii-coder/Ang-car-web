@@ -401,7 +401,73 @@ td:first-child { font-weight: 500; }
   </div>
 </section>
 
-<section class="band alt" id="opinar">
+<section class="band" style="padding-block:56px 24px">
+  <div class="in">
+    <div class="figures">
+      <div><strong data-to="96">96</strong><span>códigos de falla explicados en español</span></div>
+      <div><strong data-to="2">2</strong><span>modelos: taller y solo lectura</span></div>
+      <div><strong>500 kbit/s</strong><span>CAN según ISO 15765-4</span></div>
+      <div><strong data-to="129">129</strong><span>pruebas automáticas de la app</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="opiniones">
+  <div class="in">
+    <div class="head">
+      <span class="eyebrow">Sus palabras, no las nuestras</span>
+      <h2>Lo que dicen quienes lo probaron</h2>
+    </div>
+    <div class="reviews-top">
+      <aside class="summary" aria-label="Resumen de notas">
+        <div class="big"><strong id="s-prom">–</strong><span>de 5</span></div>
+        <div class="stars" id="s-stars" aria-hidden="true">☆☆☆☆☆</div>
+        <div class="dist" id="dist"></div>
+        <p class="note" id="s-total">Aún no hay opiniones. La primera puede ser la tuya.</p>
+      </aside>
+      <div style="display:flex;flex-direction:column;gap:20px;min-width:0">
+        <div class="feature" id="feature" hidden>
+          <span class="stars" id="f-stars"></span>
+          <q id="f-text"></q>
+          <span class="who" id="f-who"></span>
+        </div>
+        <div class="tools">
+          <div class="chips" id="chips" role="group" aria-label="Filtrar por lo que probaron"></div>
+          <label class="sr" style="display:flex;gap:8px;align-items:center;font-weight:500;color:var(--muted);font-size:.85rem">Ordenar
+            <select class="sort" id="sort">
+              <option value="new">Más recientes</option>
+              <option value="high">Mejor nota</option>
+              <option value="low">Peor nota</option>
+            </select>
+          </label>
+        </div>
+        <div class="wall" id="wall" hidden></div>
+        <div class="empty" id="empty">
+          <strong>Todavía no hay opiniones</strong>
+          <span>Las primeras llegan en la feria. Prueba la demo en el stand y deja la tuya.</span>
+          <a class="btn primary" href="#opinar">Escribir la primera</a>
+        </div>
+        <button class="btn ghost more" id="more" type="button" hidden>Ver más opiniones</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band alt" id="como">
+  <div class="in">
+    <div class="head">
+      <span class="eyebrow">Cómo funciona</span>
+      <h2>Del puerto OBD a una respuesta clara en menos de un minuto</h2>
+    </div>
+    <ol class="steps">
+      <li><h3>Conecta el dongle</h3><p>Va en el conector OBD-II, normalmente bajo el volante. Se enciende solo con la batería del auto.</p></li>
+      <li><h3>Vincula la app</h3><p>La app encuentra el dongle por Bluetooth con el nombre <span class="code">ANG Car-XXXX</span>. No necesita cables ni internet.</p></li>
+      <li><h3>Lee el diagnóstico</h3><p>Escanea los módulos y te dice qué falla, qué tan grave es y si lo revisas tú o necesitas un taller.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="band" id="opinar">
   <div class="in form-wrap">
     <div class="form-side">
       <span class="eyebrow">Tu turno</span>
@@ -465,72 +531,6 @@ td:first-child { font-weight: 500; }
         <button class="btn primary" type="submit" id="enviar">Publicar opinión</button>
       </div>
     </form>
-  </div>
-</section>
-
-<section class="band" style="padding-block:56px 24px">
-  <div class="in">
-    <div class="figures">
-      <div><strong data-to="96">96</strong><span>códigos de falla explicados en español</span></div>
-      <div><strong data-to="2">2</strong><span>modelos: taller y solo lectura</span></div>
-      <div><strong>500 kbit/s</strong><span>CAN según ISO 15765-4</span></div>
-      <div><strong data-to="129">129</strong><span>pruebas automáticas de la app</span></div>
-    </div>
-  </div>
-</section>
-
-<section class="band" id="opiniones">
-  <div class="in">
-    <div class="head">
-      <span class="eyebrow">Sus palabras, no las nuestras</span>
-      <h2>Lo que dicen quienes lo probaron</h2>
-    </div>
-    <div class="reviews-top">
-      <aside class="summary" aria-label="Resumen de notas">
-        <div class="big"><strong id="s-prom">–</strong><span>de 5</span></div>
-        <div class="stars" id="s-stars" aria-hidden="true">☆☆☆☆☆</div>
-        <div class="dist" id="dist"></div>
-        <p class="note" id="s-total">Aún no hay opiniones. La primera puede ser la tuya.</p>
-      </aside>
-      <div style="display:flex;flex-direction:column;gap:20px;min-width:0">
-        <div class="feature" id="feature" hidden>
-          <span class="stars" id="f-stars"></span>
-          <q id="f-text"></q>
-          <span class="who" id="f-who"></span>
-        </div>
-        <div class="tools">
-          <div class="chips" id="chips" role="group" aria-label="Filtrar por lo que probaron"></div>
-          <label class="sr" style="display:flex;gap:8px;align-items:center;font-weight:500;color:var(--muted);font-size:.85rem">Ordenar
-            <select class="sort" id="sort">
-              <option value="new">Más recientes</option>
-              <option value="high">Mejor nota</option>
-              <option value="low">Peor nota</option>
-            </select>
-          </label>
-        </div>
-        <div class="wall" id="wall" hidden></div>
-        <div class="empty" id="empty">
-          <strong>Todavía no hay opiniones</strong>
-          <span>Las primeras llegan en la feria. Prueba la demo en el stand y deja la tuya.</span>
-          <a class="btn primary" href="#opinar">Escribir la primera</a>
-        </div>
-        <button class="btn ghost more" id="more" type="button" hidden>Ver más opiniones</button>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="band" id="como">
-  <div class="in">
-    <div class="head">
-      <span class="eyebrow">Cómo funciona</span>
-      <h2>Del puerto OBD a una respuesta clara en menos de un minuto</h2>
-    </div>
-    <ol class="steps">
-      <li><h3>Conecta el dongle</h3><p>Va en el conector OBD-II, normalmente bajo el volante. Se enciende solo con la batería del auto.</p></li>
-      <li><h3>Vincula la app</h3><p>La app encuentra el dongle por Bluetooth con el nombre <span class="code">ANG Car-XXXX</span>. No necesita cables ni internet.</p></li>
-      <li><h3>Lee el diagnóstico</h3><p>Escanea los módulos y te dice qué falla, qué tan grave es y si lo revisas tú o necesitas un taller.</p></li>
-    </ol>
   </div>
 </section>
 
